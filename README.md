@@ -1,24 +1,24 @@
-# README
+# germain
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## Pages
+1. for clothing line 
+2. for music
+3. for appointment ( alex, Pollux, Zach, Goldyn, Eric, LATavia,) 
+4. for social media 
+5. for alex which he will be doing tattoos 
+6. for you where people can look at your work and book you for it
+7. a page for models and their story lines plus work.
+8. a page to keep everything in order. Such as our story, about, etc....
+9. Miden meaning zero (its where I will be at, I can add my own style).
 
-Things you may want to cover:
+## Page revisions
+- Artists
+- Products
+- Services
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Models
+- Users
+- Artist
+- Products
+- Services
+- Appointments
