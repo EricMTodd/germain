@@ -1,9 +1,17 @@
 import React from 'react'
+import { Routes, Route } from 'react-router-dom'
+import Home from './static/Home'
+import { NewUserForm } from './users/UserForms'
 
-const Main = () => {
+const Main = ({
+  domain
+}) => {
   return(
     <main>
-      <h1>Main</h1>
+      <Routes>
+        <Route path='/' element={<Home />} />
+        <Route path='/signup' element={<NewUserForm domain={domain} />} />
+      </Routes>
     </main>
   )
 }

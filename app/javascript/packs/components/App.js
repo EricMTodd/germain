@@ -9,7 +9,7 @@ const App = () => {
   return(
     <div id='app'>
       <Nav />
-      <Main />
+      <Main domain={domain} />
       <Footer />
     </div>
   )
