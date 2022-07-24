@@ -60,12 +60,18 @@ nav {
   padding: 0 15px 0 15px;
 }
 
-#navigation-controls > a {
+#navigation-controls > a, #login-link {
   text-decoration: none;
 }
 
-#navigation-controls > a:hover {
+#navigation-controls > a:hover, #login-link:hover {
   text-decoration: underline;
+}
+
+#sessions-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
 }
 
 #sign-up-link {

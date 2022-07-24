@@ -2,7 +2,8 @@ import React, { useState } from 'react'
 import axios from 'axios'
 
 const NewUserForm = ({
-  domain
+  domain,
+  login
 }) => {
   const [email, setEmail] = useState('')
   const [handle, setHandle] = useState('')
@@ -11,7 +12,6 @@ const NewUserForm = ({
 
   const handleSubmit = (e) => {
     e.preventDefault()
-    console.log('handleSubmit')
     axios.post(`${domain}/api/users`, {
       user: {
         email: email,
@@ -21,7 +21,7 @@ const NewUserForm = ({
       }
     })
     .then(response => {
-      console.log(response.data)
+      login(response.data)
     })
     .catch(error => console.log(error))
   }

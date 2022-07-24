@@ -4,14 +4,17 @@ class UsersController < ApplicationController
     user = User.create(user_params)
 
     if user.save
+      session[:user_id] = user.id
       render json: {
         message: 'User created.',
+        logged_in: true,
         user: user
       }
     else
       render json: {
         message: 'Failed to create user!',
-        user: user
+        logged_in: false,
+        user: {}
       }
     end
   end
