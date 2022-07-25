@@ -8,6 +8,7 @@ Rails.application.routes.draw do
 
   # User routes
   post 'api/users', to: 'users#create'
+  get 'api/users/:id', to: 'users#show'
 
   get '*path', to: 'static#index'
 end

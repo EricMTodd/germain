@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const Login = ({
@@ -7,6 +8,7 @@ const Login = ({
 }) => {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -16,6 +18,7 @@ const Login = ({
     })
     .then(response => {
       login(response.data)
+      navigate('/')
     })
     .catch(error => console.log(error))
   }

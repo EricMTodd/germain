@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom'
 import Home from './static/Home'
 import { NewUserForm } from './users/UserForms'
 import Login from './sessions/Login'
+import User from './users/User'
 
 const Main = ({
   domain,
@@ -14,6 +15,7 @@ const Main = ({
         <Route path='/' element={<Home />} />
         <Route path='/signup' element={<NewUserForm domain={domain} login={login} />} />
         <Route path='/login' element={<Login domain={domain} login={login} />} />
+        <Route path='/users/:id' element={<User domain={domain} />} />
       </Routes>
     </main>
   )

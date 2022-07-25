@@ -7,19 +7,19 @@ import Footer from './Footer'
 
 const App = () => {
   const [loggedIn, setLoggedIn] = useState(false)
+  const [currentUser, setCurrentUser] = useState({})
   const domain = 'http://localhost:3000'
-  const navigate = useNavigate()
 
   const login = (data) => {
     setLoggedIn(data.logged_in)
-    navigate('/')
+    setCurrentUser(data.user)
   }
 
   const logout = () => {
     axios.delete(`${domain}/api/sessions`)
     .then(response => {
       setLoggedIn(response.data.logged_in)
-      navigate('/')
+      setCurrentUser(response.data.user)
     })
     .catch(error => console.log(error))
   }
@@ -34,8 +34,8 @@ const App = () => {
 
   return(
     <div id='app'>
-      <Nav loggedIn={loggedIn} logout={logout} />
-      <Main domain={domain} login={login} loggedIn={loggedIn} />
+      <Nav loggedIn={loggedIn} logout={logout} currentUser={currentUser} />
+      <Main domain={domain} login={login} loggedIn={loggedIn} currentUser={currentUser} />
       <Footer />
     </div>
   )

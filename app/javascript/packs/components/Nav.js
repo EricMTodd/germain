@@ -3,7 +3,8 @@ import { Link } from 'react-router-dom'
 
 const Nav = ({
   loggedIn,
-  logout
+  logout,
+  currentUser
 }) => {
 
   if (loggedIn) {
@@ -13,6 +14,7 @@ const Nav = ({
           <Link to='/' id='home-link'>Home</Link>
         </div>
         <div id='sessions-controls'>
+          <Link to={`users/${currentUser.id}`}>{`${currentUser.handle}`}</Link>
           <button onClick={logout}>Logout</button>
         </div>
       </nav>

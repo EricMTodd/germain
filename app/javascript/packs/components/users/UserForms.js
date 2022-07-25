@@ -1,4 +1,5 @@
 import React, { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import axios from 'axios'
 
 const NewUserForm = ({
@@ -9,6 +10,7 @@ const NewUserForm = ({
   const [handle, setHandle] = useState('')
   const [password, setPassword] = useState('')
   const [passwordConfirmation, setPasswordConfirmation] = useState('')
+  const navigate = useNavigate()
 
   const handleSubmit = (e) => {
     e.preventDefault()
@@ -22,6 +24,7 @@ const NewUserForm = ({
     })
     .then(response => {
       login(response.data)
+      navigate('/')
     })
     .catch(error => console.log(error))
   }

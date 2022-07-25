@@ -19,6 +19,22 @@ class UsersController < ApplicationController
     end
   end
 
+  def show
+    user = User.find(params[:id])
+
+    if user
+      render json: {
+        message: 'Successfully retrieved user.',
+        user: user
+      }
+    else
+      render json: {
+        message: 'Failed to retrieve user!',
+        user: {}
+      }
+    end
+  end
+
 private
 
 def user_params
