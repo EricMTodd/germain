@@ -3,6 +3,14 @@
   color: white;
 }
 
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
 body {
   margin: 0 auto;
 }
@@ -41,6 +49,10 @@ form > h1 {
   margin-top: 0;
 }
 
+li {
+  list-style: none;
+}
+
 main {
   padding: 0 20% 0 20%;
   background-color: dimgray;
@@ -60,12 +72,9 @@ nav {
   padding: 0 15px 0 15px;
 }
 
-#navigation-controls > a, #login-link {
-  text-decoration: none;
-}
-
-#navigation-controls > a:hover, #login-link:hover {
-  text-decoration: underline;
+#navigation-controls {
+  display: flex;
+  gap: 5px;
 }
 
 #sessions-controls {

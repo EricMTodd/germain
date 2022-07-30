@@ -6,6 +6,21 @@ const Nav = ({
   logout,
   currentUser
 }) => {
+  
+    if (loggedIn && currentUser.admin) {
+      return(
+        <nav>
+          <div id='navigation-controls'>
+            <Link to='/' id='home-link'>Home</Link> | 
+            <Link to='/users' id='users-link'>Users</Link>
+          </div>
+          <div id='sessions-controls'>
+            <Link to={`users/${currentUser.id}`}>{`${currentUser.handle}`}</Link>
+            <button onClick={logout}>Logout</button>
+          </div>
+        </nav>
+      )
+    }
 
   if (loggedIn) {
     return(
