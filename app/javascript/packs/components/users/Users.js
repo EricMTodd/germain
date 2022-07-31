@@ -11,7 +11,6 @@ const Users = ({
   useEffect(() => {
     axios.get(`${domain}/api/users`)
     .then(response => {
-      console.log(response.data)
       setUsers(response.data.users)
     })
     .catch(error => console.log(error))
