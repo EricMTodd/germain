@@ -21,7 +21,7 @@ const Users = ({
     <div id='uesrs'>
       <h1>Users</h1>
       <ul>
-        {users.map(user => <li key={user.id}><AdminUserDetails user={user} /></li>)}
+        {users.map(user => <li key={user.id}><AdminUserDetails domain={domain} user={user} /></li>)}
       </ul>
     </div>
   )

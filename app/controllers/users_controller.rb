@@ -1,11 +1,27 @@
 class UsersController < ApplicationController
   def index
     users = User.all
-
+    
     render json: {
       message: 'Users retrieved.',
       users: users
     }
+  end
+
+  def show
+    user = User.find(params[:id])
+  
+    if user
+      render json: {
+        message: 'Successfully retrieved user.',
+        user: user
+      }
+    else
+      render json: {
+        message: 'Failed to retrieve user!',
+        user: {}
+      }
+    end
   end
 
   def create
@@ -27,18 +43,19 @@ class UsersController < ApplicationController
     end
   end
 
-  def show
+  def update
     user = User.find(params[:id])
+    user.update(user_params)
 
-    if user
+    if user.save
       render json: {
-        message: 'Successfully retrieved user.',
+        message: 'Successfully updated user.',
         user: user
       }
     else
       render json: {
-        message: 'Failed to retrieve user!',
-        user: {}
+        message: 'Failed to update user!',
+        user: user
       }
     end
   end
@@ -46,7 +63,7 @@ class UsersController < ApplicationController
 private
 
 def user_params
-  params.require(:user).permit(:email, :handle, :password, :password_confirmation)
+  params.require(:user).permit(:email, :handle, :password, :password_confirmation, :admin, :artist)
 end
 
 end

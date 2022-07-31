@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   post 'api/users', to: 'users#create'
   get 'api/users/:id', to: 'users#show'
   get 'api/users', to: 'users#index'
+  patch 'api/users/:id', to: 'users#update'
 
   get '*path', to: 'static#index'
 end
