@@ -17,8 +17,9 @@ const Login = ({
       password: password
     })
     .then(response => {
-      login(response.data)
-      navigate('/')
+      if (response.data.logged_in) {
+        login(response.data)
+      }
     })
     .catch(error => console.log(error))
   }

@@ -9,10 +9,12 @@ const App = () => {
   const [loggedIn, setLoggedIn] = useState(false)
   const [currentUser, setCurrentUser] = useState({})
   const domain = 'http://localhost:3000'
+  const navigate = useNavigate()
 
   const login = (data) => {
     setLoggedIn(data.logged_in)
     setCurrentUser(data.user)
+    navigate('/')
   }
 
   const logout = () => {
@@ -20,6 +22,7 @@ const App = () => {
     .then(response => {
       setLoggedIn(response.data.logged_in)
       setCurrentUser(response.data.user)
+      navigate('/')
     })
     .catch(error => console.log(error))
   }
